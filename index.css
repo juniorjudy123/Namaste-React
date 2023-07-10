@@ -1,0 +1,36 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+}
+
+.logo {
+	width: 175px;
+	cursor: pointer;
+}
+
+.nav-items {
+	padding: 15px 50px;
+	font-size: 21px;
+}
+
+.nav-items > ul {
+	display: flex;
+}
+
+.nav-items > ul > li {
+	padding: 10px;
+	margin: 10px;
+	list-style: none;
+	cursor: pointer;
+}
+
+.body {
+}
+
+.res-card {
+	width: 250px;
+	height: 300px;
+
+	border: 1px solid black;
+}
