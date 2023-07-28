@@ -5,32 +5,17 @@
 }
 
 .logo {
-	width: 175px;
-	cursor: pointer;
-}
-
-.nav-items {
-	padding: 15px 50px;
-	font-size: 21px;
+	width: 150px;
+	padding: 0px 10px;
 }
 
 .nav-items > ul {
 	display: flex;
+	padding: 10px 20px;
+	list-style-type: none;
 }
 
 .nav-items > ul > li {
 	padding: 10px;
 	margin: 10px;
-	list-style: none;
-	cursor: pointer;
-}
-
-.body {
-}
-
-.res-card {
-	width: 250px;
-	height: 300px;
-
-	border: 1px solid black;
 }

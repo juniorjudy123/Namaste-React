@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../css practice"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "css practice"
+	}
+}
