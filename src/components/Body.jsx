@@ -1,52 +1,21 @@
 import Restaurantcard from "./RestaurantCard"
 import ResList from "../utils/mockdata"
+import { useState, useEffect } from "react"
 
 const Body = () => {
-	let listofRestaurants = [
-		{
-			info: {
-				id: "43836",
-				name: "BurgerKing",
-				cloudinaryImageId: "ee5f8e06b300efc07c9fe3f4df40dfc4",
-				costForTwo: "₹400 for two",
-				cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-				avgRating: 3,
+	const [listofRestaurants, setListofRestaurant] = useState(ResList)
 
-				sla: {
-					deliveryTime: 18,
-				},
-			},
-		},
+	useEffect(() => {
+		fetchData()
+	}, [])
 
-		{
-			info: {
-				id: "43837",
-				name: "McDonald's",
-				cloudinaryImageId: "ee5f8e06b300efc07c9fe3f4df40dfc4",
-				costForTwo: "₹400 for two",
-				cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-				avgRating: 4.7,
-
-				sla: {
-					deliveryTime: 18,
-				},
-			},
-		},
-		{
-			info: {
-				id: "43838",
-				name: "kfc",
-				cloudinaryImageId: "ee5f8e06b300efc07c9fe3f4df40dfc4",
-				costForTwo: "₹400 for two",
-				cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-				avgRating: 4.2,
-
-				sla: {
-					deliveryTime: 18,
-				},
-			},
-		},
-	]
+	const fetchData = async () => {
+		const data = await fetch(
+			"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+		)
+		const json = await data.json()
+		console.log(json)
+	}
 
 	return (
 		<div className="body">
@@ -54,10 +23,10 @@ const Body = () => {
 				<button
 					className="filter-btn"
 					onClick={() => {
-						listofRestaurants = listofRestaurants.filter(
-							(res) => res.info.avgRating > 4
+						const filteredList = listofRestaurants.filter(
+							(res) => res.info.avgRating > 4.5
 						)
-						console.log(listofRestaurants)
+						setListofRestaurant(filteredList)
 					}}
 				>
 					Top rated restaurant
